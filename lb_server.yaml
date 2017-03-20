@@ -33,7 +33,7 @@ resources:
       networks: [{'network': {get_param: network}}]
       user_data_format: RAW
   member:
-    type: OS::Neutron::PoolMember
+    type: OS::Neutron::LBaaS::PoolMember
     properties:
       pool_id: {get_param: pool_id}
       address: {get_attr: [server, first_address]}
