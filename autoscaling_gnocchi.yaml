@@ -81,6 +81,7 @@ resources:
           key_name: {get_param: key}
           network: {get_param: network_id}
           pool_id: {get_resource: pool}
+          subnet_id: {get_param: subnet_id}
           metadata: {"metering.server_group": {get_param: "OS::stack_id"}}
           user_data:
             str_replace:
@@ -208,9 +209,9 @@ outputs:
       You can invoke the scale-down operation by doing an HTTP POST to
       this URL; no body nor extra headers are needed.
     value: {get_attr: [web_server_scaledown_policy, alarm_url]}
-  pool_ip_address:
-    value: {get_attr: [pool, vip, address]}
-    description: The IP address of the load balancing pool
+  #pool_ip_address:
+  #  value: {get_attr: [pool, vip, address]}
+  #  description: The IP address of the load balancing pool
   website_url:
     value:
       str_replace:
