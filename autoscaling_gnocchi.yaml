@@ -73,7 +73,8 @@ resources:
       min_size: 1
       max_size: 3
       resource:
-        type: https://github.com/lorenzo-biava/openstack-autoscaling-demo/raw/master/lb_server.yaml
+        #type: https://github.com/lorenzo-biava/openstack-autoscaling-demo/raw/master/lb_server.yaml
+        type: lb_server.yaml
         properties:
           flavor: {get_param: flavor}
           image: {get_param: image}
