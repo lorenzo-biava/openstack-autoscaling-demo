@@ -192,7 +192,7 @@ resources:
     type: "OS::Neutron::FloatingIP"
     properties:
       floating_network_id: {get_param: external_network_id}
-      port_id: {get_attr: [loadbalancer, vip_port_id]}
+      port_id: {get_attr: [lb, vip_port_id]}
 
 outputs:
   scale_up_url:
